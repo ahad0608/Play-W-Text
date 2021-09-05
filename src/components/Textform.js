@@ -42,6 +42,14 @@ export default function Textform(props) {
         setText(newText.join(" "))
         props.showalert("Extra Spaces has been Adjusted","success");
     }
+    const words = (text)=>{
+        if(text.endsWith(" ")){
+            return text.split(' ').length -1 ;
+        }
+        else{
+            return text.split(' ').length;
+        }
+    }
    
     return (
         <>
@@ -61,8 +69,8 @@ export default function Textform(props) {
         </div>
         <div className={`container my-3 text-${props.mode==='light'?'dark':'light'}`}>
             <h2> Your text Summary</h2>
-            <p>{text.length>0?`${text.split(' ').length} words and ${text.length} characters.`:"Enter Text"}</p>
-            <p>{text.length>0?`${0.008* text.split(' ').length} minute read.`:"" }</p>
+            <p>{text.length>0?`${words(text)} words and ${text.length} characters.`:"Enter Text"}</p>
+            <p>{text.length>0?`${0.008* words(text)} minute read.`:"" }</p>
             <h3>Preview</h3>
             <p>{text.length>0?text:"Enter Something in Text Box to Preview it Here"}</p>
             
