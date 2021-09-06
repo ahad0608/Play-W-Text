@@ -27,11 +27,13 @@ function App() {
       setmode('dark');
       document.body.style.backgroundColor="#2a2828";
       showalert("Dark Mode has been enabled", "success");
+      
     }
     else{
       setmode('light');
       document.body.style.backgroundColor="white";
       showalert("Light Mode has been enabled","success");
+      
     }
   }
   return (
