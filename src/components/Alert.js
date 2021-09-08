@@ -6,9 +6,12 @@ export default function Alert(props) {
         return lower.charAt(0).toUpperCase()+lower.slice(1);
     }
     return (
-        props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-            <strong>{capitalize(props.alert.type)} : {props.alert.msg}</strong>
+        <div style={{height:'40px'}}>
+           { props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+            <strong>{capitalize(props.alert.type)} : {props.alert.msg}</strong> 
             
-        </div>   // here and operator is used to counter null values of alert.
+        </div>} 
+        </div> //here and operator is used to counter null values of alert
+        
     )
 }
